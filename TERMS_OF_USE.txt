@@ -1,0 +1,76 @@
+# EWoK Terms of Use
+
+QUICK SUMMARY: [1] DO NOT PUT PLAIN-TEXT EWOK-GENERATED DATA ON THE INTERNET! (MUST BE IN
+PASSWORD-PROTECTED ZIP). [2] EXPLICITLY REPORT ANY USE OF EWOK TOWARDS TRAINING/IMPROVING MODELS.
+
+We envision the EWoK framework as a useful resource to probe the understanding of basic world
+knowledge in language models. However, to enable the broader research community to best make use of
+this resource, it is important that we have a shared understanding of how to use it most
+effectively. This document outlines our vision for keeping the resource as accessible and open as
+possible, while also protecting it from intentional or unintentional misuse.
+
+
+1. DEFINITIONS/GLOSSARY.  For more information about each of these terms, please refer to the EWoK
+paper linked from <https://ewok-core.github.io>.  - Configuration files, Config files, Materials:
+these refer to the (currently YAML-formatted) materials consisting of Concepts, Contexts, Targets,
+Fillers (explained in the paper) that define specific concepts to test, the sentences and contexts
+in which they are used to test them, and all adjoining metadata providing information about how they
+should be combinatorially combined with one another to generate items in an instance of an EWoK
+dataset.  - The EWoK framework, EWoK, the framework: these terms all refer to the collection of the
+configuration files that get compiled into a dataset of templates and then into items to evaluate
+language models on.  - The EWoK framework code: the code pipeline that compiles the EWoK materials
+into templates and then into items.  - Templates: These are the result of compiling Config files
+through the EWoK framework. Concepts and Contexts are put together with Targets to generate
+item-templates involving variables like “{agent1}” where Concepts are deployed. These templates can
+be filled in by the EWoK framework in a second step to generate actual items.  - Dataset, instance
+of a dataset, items: a specific instantiation of a dataset resulting from a set of configuration
+files and parameters to the EWoK framework (such as how many fillers to use per template), the
+resultant templates, and then filling into those templates again to finally produce a set of items
+to evaluate language models on. The specific instance of dataset used in the EWoK paper is named
+EWoK-core-1.0, and is described in the EWoK paper (https://ewok-core.github.io).  - Models (examples
+include, but aren’t limited to: Language Models, Large Language Models, LMs, LLMs, Vision models,
+Foundation Models. For more, see Bommasani et al. 2021 <https://arxiv.org/abs/2108.07258>). For our
+purposes, any model or intelligent system which can be altered via pre-training/training falls into
+this definition.
+
+2. PURPOSE.  - Intended use: We envision the EWoK framework and any current and resulting future
+datasets as a useful resource to probe the understanding of basic world knowledge, or the core
+building blocks of world knowledge, in language models. We also enable the community to use/adapt
+the framework to generate their own datasets that may be more specialized in scope than the EWoK-1.0
+dataset.  - Our release-related goals are to (a) reduce the chances of accidental incorporation of
+EWoK items into LLMs’ training data and (b) promote accountability and reporting when such
+incorporation is done intentionally.  - Our intention is not to restrict access; on the contrary, we
+want to promote open science and widespread use of this resource. However, we want to prevent
+unintentional leaking of the data and inclusion in LM’s pre-training or training data rendering EWoK
+less useful as an evaluation resource for these models for future use.
+
+3. TERMS OF USE (TOU).  - LICENSE: All EWoK materials (config files, templates, and generated
+datasets) are released under a CC-BY 4.0 International license. All code is released under the MIT
+license. For any dataset created using EWoK, PLEASE only share the data with password protection in
+a ZIP file to prevent accidental inclusion in model training data. Explicit attribution is necessary
+for derivative works linking it back to this work. Read more in the included LICENSE.txt file, or at
+<https://creativecommons.org/licenses/by/4.0/>. Using EWoK materials requires accepting the TOU
+written here and the adjoining LICENSE.  - ORIGINAL MATERIALS: We are releasing the following
+materials in the form of password-protected ZIP files. The password is “ewok”. You agree NOT TO
+further share any of the protected materials without the same protections (password-protected ZIP
+files). (a) EWoK config files; (b) EWoK-core-1.0 dataset; (c) Plain-text results CSVs from LLM
+evaluation; (d) Plain-text results CSVs from Human study.  - DERIVATIVE MATERIALS: Any use of EWoK
+to create derivative datasets is protected under the same TOU as here. The same data protection
+considerations apply.  - EXPLICIT ATTRIBUTION FOR USE AS TRAINING DATA/FOR USE OTHER THAN
+EVALUATION: We require that any model (see definitions above) incorporating EWoK-generated materials
+in its training data must explicitly acknowledge doing so. This applies to future EWoK-generated
+materials also. Places where this should be mentioned include: (a) Model card: in your model’s
+descriptor “card”; for examples and a description of what a model card is, see:
+<https://arxiv.org/abs/1810.03993>, <https://huggingface.co/docs/hub/en/model-cards> (b)
+README/Repository: prominently acknowledge using EWoK and EWoK-generated materials in the relevant
+README document of your model’s release. If your model lives on GitHub, Huggingface, or another
+software/model weights hosting platform, make sure the acknowledgment is visible there. See below
+for a suggested acknowledgment blurb.  (c) Preprint, Paper, or Publication about your model: please
+acknowledge your use of EWoK in your model’s training if there is an associated publication.
+
+
+4. SUGGESTED ACKNOWLEDGMENT BLURB (EXAMPLE).  “We acknowledge that our model was trained on data
+from the EWoK framework <https://ewok-core.github.io>. Specifically we included the EWoK-core-1.0
+dataset reported in the EWoK paper (Ivanova, Sathe, Lipkin, et al., 2024) as part of our training
+data.”
+

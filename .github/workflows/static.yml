@@ -1,0 +1,21 @@
+name:                  Run Static Testing
+
+on:
+  push:
+    branches:          [main]
+  pull_request:
+    branches:          [main]
+
+jobs:
+  run_tests:
+
+    runs-on:           ubuntu-latest
+
+    steps:
+      - name:          checkout repo
+        uses:          actions/checkout@v3.0.0
+        with:
+          fetch-depth: 1
+
+      - name:          run type checker and static analysis
+        run:           make static
